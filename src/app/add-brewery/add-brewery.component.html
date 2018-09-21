@@ -1,0 +1,17 @@
+<div class="row justify-content-center">
+  <div class="col-10 col-xl-6">
+    <form #f="ngForm" (ngSubmit)="addNewBrewery(f.value)">
+      <mat-form-field>
+        <input ngModel matInput placeholder="Nazov pivovaru" name="name">
+      </mat-form-field>
+      <mat-form-field>
+        <input ngModel matInput placeholder="Stat" name="state">
+      </mat-form-field>
+      <mat-form-field>
+        <input ngModel matInput placeholder="Mesto" name="city">
+      </mat-form-field>
+      <mat-checkbox ngModel name="gypsy">Kocovny</mat-checkbox><br />
+      <button mat-flat-button color="primary" type="submit">Pridat</button>
+    </form>
+  </div>
+</div>

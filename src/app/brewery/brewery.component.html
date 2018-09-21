@@ -1,7 +1,11 @@
 <mat-card>
-  <mat-card-title-group>    
+  <mat-card-title-group>
     <mat-card-title>{{ brewery.name }}</mat-card-title>
     <mat-card-subtitle>{{ brewery.city }} | {{ brewery.state }} | {{ brewery.gypsy === true ? 'Kocovny' : 'Pivovar' }}</mat-card-subtitle>
     <img mat-card-sm-image class="brewery-logo img-responsive" [src]="brewery.logoUrl">
   </mat-card-title-group>
+  <mat-card-actions>
+    <button mat-stroked-button color="primary">Facebook</button>
+    <button mat-stroked-button color="warn">Upravit</button>
+  </mat-card-actions>
 </mat-card>

@@ -5,6 +5,14 @@ export class Brewery {
   private _logoUrl: string;
   private _gypsy: boolean;
 
+  constructor() {
+    this.name = "";
+    this.city = "";
+    this.state = "";
+    this.logoUrl = "url";
+    this.gypsy = false;
+  }
+
   get name(): string {
     return this._name;
   }
