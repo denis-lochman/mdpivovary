@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, InjectionToken } from '@angular/core';
 import { RoutingModule } from './routing/routing.module';
 import { FormsModule } from "@angular/forms";
 
@@ -24,6 +24,7 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 import { HomeComponent } from './home/home.component';
 import { BreweryFormComponent } from './brewery-form/brewery-form.component';
 import { BreweriesService } from './services/breweries-service.service';
+import { ClipboardModule } from 'ngx-clipboard';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { BreweriesService } from './services/breweries-service.service';
     BrowserModule,
     RoutingModule,
     FormsModule,
+    ClipboardModule,
     AngularFireModule.initializeApp(environment.firebase),       
     AngularFireDatabaseModule,
 
@@ -49,7 +51,9 @@ import { BreweriesService } from './services/breweries-service.service';
     MatButtonModule,
     MatCheckboxModule
   ],
-  providers: [ BreweriesService ],
+  providers: [ 
+    BreweriesService    
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

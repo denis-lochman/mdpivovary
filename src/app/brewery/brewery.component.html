@@ -5,7 +5,7 @@
     <img mat-card-sm-image class="brewery-logo img-responsive" [src]="brewery.logoUrl">
   </mat-card-title-group>
   <mat-card-actions>
-    <button mat-stroked-button color="primary">Facebook</button>
+    <button (click)="copyBreweryInfo()" mat-stroked-button color="primary">Kopirovat</button>
     <a [routerLink]="['/brewery-form', brewery.id]"><button mat-stroked-button color="warn">Upravit</button></a>
   </mat-card-actions>
 </mat-card>
