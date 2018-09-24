@@ -6,6 +6,6 @@
   </mat-card-title-group>
   <mat-card-actions>
     <button mat-stroked-button color="primary">Facebook</button>
-    <button mat-stroked-button color="warn">Upravit</button>
+    <a [routerLink]="['/brewery-form', brewery.id]"><button mat-stroked-button color="warn">Upravit</button></a>
   </mat-card-actions>
 </mat-card>

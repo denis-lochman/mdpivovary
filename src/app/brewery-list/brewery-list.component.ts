@@ -10,11 +10,21 @@ import { BreweriesService } from '../services/breweries-service.service';
 })
 export class BreweryListComponent implements OnInit {
   $breweries: Observable<Brewery[]>;
+  breweries: Brewery[] = [];
 
   constructor(private _breweriesService: BreweriesService) { }
 
-  ngOnInit() {
-    this.$breweries = this._breweriesService.getAllBreweries();
+  ngOnInit() {    
+    this._breweriesService.getAllBreweries().subscribe(result => {   
+      this.mapToBreweries(result);              
+    });  
+  } 
+  
+  mapToBreweries(breweries: any[]): void {
+    breweries.forEach(b => {   
+      var brewery: Brewery = b.payload.val();
+      brewery.id = b.key;
+      this.breweries.push(brewery);
+    });
   }
-
 }

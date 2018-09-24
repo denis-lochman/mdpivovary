@@ -22,6 +22,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatButtonModule} from '@angular/material/button';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import { HomeComponent } from './home/home.component';
+import { BreweryFormComponent } from './brewery-form/brewery-form.component';
+import { BreweriesService } from './services/breweries-service.service';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,8 @@ import { HomeComponent } from './home/home.component';
     BreweryListComponent,
     AddBreweryComponent,
     NavbarComponent,
-    HomeComponent
+    HomeComponent,
+    BreweryFormComponent
   ],
   imports: [
     BrowserModule,
@@ -46,7 +49,7 @@ import { HomeComponent } from './home/home.component';
     MatButtonModule,
     MatCheckboxModule
   ],
-  providers: [],
+  providers: [ BreweriesService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

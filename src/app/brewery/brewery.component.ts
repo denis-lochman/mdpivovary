@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Brewery } from '../../models/brewery.model';
 
 @Component({
@@ -8,10 +8,10 @@ import { Brewery } from '../../models/brewery.model';
 })
 export class BreweryComponent implements OnInit {
   @Input('brewery') brewery: Brewery;
+  @Output('brewery') breweryOutput = new EventEmitter<Brewery>();
 
   constructor() { }
 
-  ngOnInit() {
+  ngOnInit() {    
   }
-
 }

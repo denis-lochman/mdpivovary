@@ -1,0 +1,20 @@
+<div class="row justify-content-center">
+  <div class="col-10 col-xl-6">
+    <form #f="ngForm" (ngSubmit)="submitBrewery(f.value)">
+      <mat-form-field>
+        <input [(ngModel)]="brewery.name" matInput placeholder="Nazov pivovaru" name="name">
+      </mat-form-field>
+      <mat-form-field>
+        <input [(ngModel)]="brewery.state" matInput placeholder="Stat" name="state">
+      </mat-form-field>
+      <mat-form-field>
+        <input [(ngModel)]="brewery.city" matInput placeholder="Mesto" name="city">
+      </mat-form-field>
+      <mat-form-field>
+        <input [(ngModel)]="brewery.logoUrl" matInput placeholder="Logo URL" name="logoUrl">
+      </mat-form-field>
+      <mat-checkbox [(ngModel)]="brewery.gypsy" name="gypsy">Kocovny</mat-checkbox><br />
+      <button mat-flat-button color="primary" type="submit">Ulozit</button>
+    </form>
+  </div>
+</div>

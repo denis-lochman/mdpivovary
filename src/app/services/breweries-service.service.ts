@@ -11,11 +11,18 @@ export class BreweriesService {
   constructor(private _db: AngularFireDatabase) { }
 
   getAllBreweries(): Observable<any[]> {
-    return this._db.list("breweries", ref => ref.orderByChild("name")).valueChanges();
+    return this._db.list("breweries", ref => ref.orderByChild("name")).snapshotChanges();
   }
 
-  addNewBrewery(brewery: Brewery): void {
-    console.log(brewery);
+  getBrewery(breweryId: string): Observable<any> {
+    return this._db.object('breweries/' + breweryId).valueChanges();
+  }
+
+  addNewBrewery(brewery: Brewery): void {    
     this._db.list("breweries").push(brewery);
+  }
+
+  setExistingBrewery(brewery: Brewery): void {    
+    this._db.object('breweries/' + brewery.id).set(brewery);
   }
 }
